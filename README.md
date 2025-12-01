@@ -12,8 +12,8 @@
 </div>
 
 ---
-```⚠️ Legal Disclaimer
-
+```
+⚠️ Legal Disclaimer
 NeuralMind is intended strictly for educational purposes, ethical hacking, internal testing, and research.
 The developer (Dev_Nand) is not responsible for misuse, damage, or unauthorized activities.
 Never scan systems or networks without explicit permission
