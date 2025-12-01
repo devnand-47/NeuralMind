@@ -12,11 +12,19 @@
 </div>
 
 ---
+```⚠️ Legal Disclaimer
+
+NeuralMind is intended strictly for educational purposes, ethical hacking, internal testing, and research.
+The developer (Dev_Nand) is not responsible for misuse, damage, or unauthorized activities.
+Never scan systems or networks without explicit permission
+```
 
 ### 🧠 System Overview
-**NeuralMind** is an extensible, modular security framework designed to centralize Red Team operations. Unlike monolithic scripts, NeuralMind utilizes a "Core" architecture that dynamically loads specialized modules for reconnaissance, static analysis, and covert operations.
 
-This framework is built for **scalability**—new offensive or defensive capabilities can be integrated simply by dropping a Python script into the `/modules` directory, automatically registering it with the central CLI.
+**NeuralMind** is an extensible, modular security framework designed to centralize Red Team operations.  
+Unlike monolithic tools, NeuralMind uses a **Core + Modules** architecture where each capability is a plug-and-play Python script placed inside the `/modules` directory.
+
+New offensive or defensive modules can be added instantly — no rewrites needed.
 
 ---
 
@@ -32,71 +40,85 @@ This framework is built for **scalability**—new offensive or defensive capabil
 
 ### ⚙️ Deployment & Installation
 
-Follow these steps to deploy NeuralMind in your local environment.
-
-#### 1. Clone the Repository
+#### **1. Clone the Repository**
 ```bash
-git clone [https://github.com/devnand-47/NeuralMind.git](https://github.com/devnand-47/NeuralMind.git)
+git clone https://github.com/devnand-47/NeuralMind.git
 cd NeuralMind
-2. Install Dependencies
-Bash
-
 pip install -r requirements.txt
-3. Initialize the Core
-Bash
-
 python main.py
+```
 📘 Operations Manual
-1. Cortex (Vulnerability Scanner)
-Function: Performs Static Application Security Testing (SAST) on source code to identify insecure coding patterns.
 
-Vectors Scanned: Hardcoded credentials, exec()/eval() usage, SQL injection vulnerabilities.
+1. Cortex — Static Analysis (SAST)
 
-Usage:
+Identifies insecure coding patterns inside Python source files.
 
-Plaintext
+Scans for:
 
+Hardcoded credentials
+
+Dangerous calls (exec, eval)
+
+SQL injection patterns
+
+Weak input sanitization
+
+Usage
+```
 [NeuralMind] > Select Module: 1
-[Cortex] > Enter target file: targets/vulnerable_test.py
+[Cortex] > Enter target file: targets/test.py
 
 [!] ALERT: Hardcoded Password detected.
 [!] ALERT: SQL Injection Risk detected.
-2. Ghost (Steganography)
-Function: Implements Least Significant Bit (LSB) steganography to hide encrypted text payload inside image files for covert communication.
+```
+2. Ghost — Steganography (LSB)
 
-Modes: (E)ncrypt (Hide data) / (D)ecrypt (Reveal data).
+Hides encrypted text payloads inside PNG images using Least Significant Bit encoding.
 
-Constraints: Supports .png files to prevent data loss via compression.
+Modes:
 
-Usage:
+E → Embed (Encrypt + Hide)
 
-Plaintext
+D → Decode (Reveal hidden data)
 
+Constraints:
+
+Only `.png` supported (lossless)
+
+Usage
+```
 [NeuralMind] > Select Module: 2
 [Ghost] > Mode: E
 [Ghost] > Target Image: targets/cover.png
 [Ghost] > Payload: "Operation starting at midnight."
+
 [+] Success. Output saved to secret_image.png
-3. Vision (Network Reconnaissance)
-Function: Maps local subnets to identify active hosts and open service ports.
+```
+3. Vision — Network Reconnaissance
 
-Method: Raw socket connections and ICMP requests.
+Maps local subnet and identifies alive hosts with lightweight active scanning.
 
-Demo Limit: Scans IPs 1-50 in the detected subnet.
+Techniques:
 
-Usage:
+ICMP Echo Requests
 
-Plaintext
+Raw Socket Connections
 
+Demo Limits:
+
+Scans IPs 1–50 in the detected subnet
+
+Usage
+```
 [NeuralMind] > Select Module: 3
 [Vision] > Enter Target IP: 192.168.1.1
 
 [*] Scanning Subnet...
 [+] Host Up: 192.168.1.1 (Gateway)
 [+] Host Up: 192.168.1.45 (Workstation)
+```
 📂 Architecture Structure
-Bash
-
+```
 NeuralMind/
 ├── modules/             # Plug-and-Play Capabilities
 │   ├── __init__.py      # Package Initialization
@@ -106,9 +128,13 @@ NeuralMind/
 ├── targets/             # Firing Range (Test files)
 ├── main.py              # Central CLI Controller
 └── requirements.txt     # Dependency Manifest
+```
 ⚠️ Legal Disclaimer
-This tool is for educational purposes and internal security testing only.
 
-The developer (Dev_Nand) is not responsible for any misuse or damage caused by this program. NeuralMind is intended to demonstrate modular software architecture in a cybersecurity context. Never scan networks or systems without explicit permission.
+NeuralMind is intended strictly for educational purposes, ethical hacking, internal testing, and research.
+The developer (Dev_Nand) is not responsible for misuse, damage, or unauthorized activities.
+Never scan systems or networks without explicit permission.
 
-<div align="center"> <h3>Developed with 💀 by <a href="https://github.com/devnand-47">Dev_Nand</a></h3> </div>
+<div align="center"> <h3>Developed  by <a href="https://github.com/devnand-47">Dev_Nand</a></h3> </div> ```
+
+
