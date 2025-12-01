@@ -135,6 +135,6 @@ NeuralMind is intended strictly for educational purposes, ethical hacking, inter
 The developer (Dev_Nand) is not responsible for misuse, damage, or unauthorized activities.
 Never scan systems or networks without explicit permission.
 
-<div align="center"> <h3>Developed  by <a href="https://github.com/devnand-47">Dev_Nand</a></h3> </div> ```
+<div align="center"> <h3>Developed  by <a href="https://github.com/devnand-47">Dev_Nand</a></h3> </div> 
 
 
